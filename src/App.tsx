@@ -1,5 +1,5 @@
 import PatientsForm from "./components/PatientsForm";
-
+import PatientsList from "./components/PatientsList";
 function App() {
   return (
     <>
@@ -10,10 +10,10 @@ function App() {
         </h1>
 
         <div className="mt-12 md:flex">
-          <PatientsForm />
-          <div>
-            <h1>Patients List</h1>
-          </div>
+         
+            <PatientsForm />
+            <PatientsList/>
+          
         </div>
       </div>
     </>
