@@ -3,6 +3,7 @@ import Error from "./Error";
 import { DraftPatient } from "../types";
 import { usePatient } from "../store";
 import { useEffect } from "react";
+import { toast } from "react-toastify";
 
 export default function PatientForm( ) {
   const {
@@ -34,11 +35,30 @@ export default function PatientForm( ) {
     if(activeId){
       updatePatient(data)
       reset();
+      toast.success('Paciente Actualizado Correctamente', {
+        position: "top-right",
+        autoClose: 500,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        progress: undefined,
+        theme: "light",
+        });
       return
     }
-    
+
     addPatient(data)
     reset();
+
+    toast.success('Paciente Agregado Correctamente', {
+      position: "top-right",
+      autoClose: 500,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      progress: undefined,
+      theme: "light",
+      });
   };
   
   return (
